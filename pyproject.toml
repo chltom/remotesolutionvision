@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "sam2pe"
+version = "0.1.0"
+description = "pose estimation based on sam2"
+authors = ["sungeun <sungeun@lg>"]
+readme = "README.md"
+
+packages = [
+    { include = "pe" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = {version = "~2.5.0+cu124", source = "pytorch"}
+torchvision = {version = "~0.20.0+cu124", source = "pytorch"}
+torchaudio = {version = "~2.5.0+cu124", source = "pytorch"}
+sam-2 = {path = "sam"}
+numpy = "^1.24"
+opencv-python = "~4.8"
+opencv-contrib-python = "~4.8"
+matplotlib = "^3.10.0"
+
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
